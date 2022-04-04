@@ -107,7 +107,7 @@ const userLogin = async (req, res) => {
 
         const token = jwt.sign({
             id: user._id
-        }, 'Group28', { expiresIn: 60 * 30 });
+        }, 'Group28', { expiresIn: 60 * 60 });
         res.setHeader("x-api-key", token);
         return res.status(200).send({ 'status': true, message: "Success", data: token });
 
